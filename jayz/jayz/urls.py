@@ -5,7 +5,8 @@ from .views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home)
+    path('accounts/', include('allauth.urls')),
+    path("",include('cart.urls', namespace="cart")),
 ]
 
 if settings.DEBUG:
